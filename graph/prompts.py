@@ -10,7 +10,7 @@ Investigate the latest updates, real-time facts, and developing coverage around 
 - **Tags:** {refrence_video_tags}
 
 ### Instructions
-1. Use your search tool to fetch the latest developments, verified facts, numbers, and reactions.
+1. Use your search tool with requried query parameter as question asked to fetch the latest developments, verified facts, numbers, and reactions.
 2. Outline 1 distinct content angles based on the findings:
    - Deep-Dive / Scientific Investigation
    - Follow-Up / Human-Interest

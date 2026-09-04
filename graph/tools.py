@@ -13,7 +13,7 @@ def tavily_search_tool(query: str):
     Use this tool when up-to-date information from the internet is required.
     Args:
         query: A specific web search query describing exactly what information
-               you need to find.
+               you need to find is requried.
     """
     print("Tavily search query:", query)
     if not query.strip():
