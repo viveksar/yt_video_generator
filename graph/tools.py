@@ -36,13 +36,15 @@ class SearchInput(BaseModel):
 @tool(args_schema=SearchInput)
 def tavily_search_tool(query: str) -> str:
     """Performs a live web search for news and facts based on a keyword search query."""
-    search_tool = TavilySearch(
-        max_results=2,
-        topic="news",
-        tavily_api_key=os.getenv("TAVILY_API_KEY")
-    )
-    return search_tool.invoke(query)
-
+    try:
+        search_tool = TavilySearch(
+            max_results=2,
+            topic="news",
+            tavily_api_key=os.getenv("TAVILY_API_KEY")
+        )
+        return search_tool.invoke(query)
+    except Exception as ex:
+        return f"Warning: Web search tool unavailable or timed out ({str(ex)}). Proceed using reference metadata."
 @tool
 def generate_thumb_image(title:str,description:str|None=''):
     """This tool generates the thumbnail image from the title and description of the video."""

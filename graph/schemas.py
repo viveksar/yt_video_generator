@@ -1,5 +1,6 @@
 from pydantic import BaseModel, Field
 from typing_extensions import TypedDict
+from typing import Optional,Dict
 class ReleventVideo(BaseModel):
     """Structure of an individual relevant video idea."""
 
@@ -58,3 +59,5 @@ class State(TypedDict):
     relevent_videos:ReleventVideos
     final_video_data:GeneratedVideoData
     final_video_package:CombineVideoData
+    status:str
+    error_message:Optional[Dict[str,str]]
